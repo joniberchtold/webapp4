@@ -9,7 +9,7 @@
   </head>
   <body>
   
-<audio autoplay controls>
+<audio autoplay>
   <source src="audio/musik.mp3" type="audio/mpeg">
  
 </audio>
