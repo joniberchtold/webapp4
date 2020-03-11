@@ -9,6 +9,13 @@
   </head>
   <body>
   
+<audio autoplay controls>
+  <source src="audio/musik.mp3" type="audio/mpeg">
+ 
+</audio>
+  
+  
+  
    <?php
         // Hier werden die DB verlinkung und die Navigation eingefügt
 		// navigation.php ist für Navigation
