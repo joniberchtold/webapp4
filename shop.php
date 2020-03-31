@@ -21,7 +21,7 @@
 <?php
 	
 	
-		//Ausgabe Datenbank Produkte
+		//Ausgabe Datenbank traktoren
 	
         $sql = "SELECT ProductID, Fahrzeugname, Einsatzgebiet, Bild, Name_des_Halters, Telefonnummer, E-Mail FROM fahrzeuge";
 			foreach ($pdo->query($sql) as $row) {
