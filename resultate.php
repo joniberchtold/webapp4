@@ -36,7 +36,7 @@
                 die;
             }else{
             
-                $sql = "SELECT ID, Name, Artikelnummer, Bild, Beschreibung FROM artikel WHERE Name LIKE '%$suchstring%' or Artikelnummer LIKE '%$suchstring%'";
+                $sql = "SELECT ID, Name, Artikelnummer, Bild, Beschreibung FROM artikel WHERE Name LIKE '%$suchstring%'";
                 
                 $count_var = 0;
                 
