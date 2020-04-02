@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 11. Mrz 2020 um 16:48
--- Server-Version: 10.1.38-MariaDB
--- PHP-Version: 7.3.2
+-- Erstellungszeit: 02. Apr 2020 um 14:43
+-- Server-Version: 10.4.11-MariaDB
+-- PHP-Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -58,6 +58,13 @@ CREATE TABLE `fahrzeuge` (
   `E-Mail` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Daten für Tabelle `fahrzeuge`
+--
+
+INSERT INTO `fahrzeuge` (`ProductID`, `Fahrzeugname`, `Einsatzgebiet`, `Bild`, `Name_des_Halters`, `Telefonnummer`, `E-Mail`) VALUES
+(1, 'John Deere 5058E', 'Landwirtschaft', 'johndeere5e', 'Jonas Berchtold', 796282594, 'jonas.berchtold@hotmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -99,7 +106,7 @@ ALTER TABLE `benutzer`
 -- AUTO_INCREMENT für Tabelle `fahrzeuge`
 --
 ALTER TABLE `fahrzeuge`
-  MODIFY `ProductID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProductID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
