@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-	<title>Shop</title>
+	<title>Traktoren</title>
   </head>
   <body>
   
@@ -32,7 +32,8 @@
 					$produkt_halter = $row['Name_des_Halters'];
 					$produkt_telefon = $row['Telefonnummer'];
 					$produkt_email = $row['E-Mail'];
-			
+					
+
 ?>
             <!-- Anzeige Produkt -->
 			<div id="produkt">
@@ -42,7 +43,7 @@
             <div id="produkt_halter"><?php echo $produkt_halter; ?></div>
 			<div id="produkt_telefon"><?php echo $produkt_telefon; ?></div>
 			<div id="produkt_email"><?php echo $produkt_email; ?></div>
-            <div id="produkt_bearbeitung"><form method="post" action='edit.php'> <input name="produkt_nr" type="hidden" value="<?php echo $produkt_id; ?>"></input><button type="submit">Bearbeiten</button></form><form method="post" action='del.php'><input name="produkt_nr" type="hidden" value="<?php echo $produkt_id; ?>"></input><button type="submit">Löschen</button></form></div>
+            <!-- <div id="produkt_bearbeitung"><form method="post" action='edit.php'> <input name="produkt_nr" type="hidden" value="<?php echo $produkt_id; ?>"></input><button type="submit">Bearbeiten</button></form><form method="post" action='del.php'><input name="produkt_nr" type="hidden" value="<?php echo $produkt_id; ?>"></input><button type="submit">Löschen</button></form></div> -->
             </div>
 <?php
         }
