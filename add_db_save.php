@@ -9,7 +9,7 @@
 
     $produkt_bild = $_FILES["inputfile1"]["name"];
     
-    $target_dir ="bilder/";
+    $target_dir ="bild/";
     $target_file = $target_dir . basename($_FILES["inputfile1"]["name"]);
     
     move_uploaded_file($_FILES["inputfile1"]["tmp_name"], $target_file);
@@ -19,9 +19,10 @@
     include "datenbank.php";
 	
 	//Mittels SQL werden die Daten in die DB geschrieben
-    $sql = "INSERT INTO fahrzeuge(ProductID, Fahrzeugname, Einsatzgebiet, Bild, Name_des_Halters, Telefonnummer, E-Mail) VALUES ('', '$produkt_name', '$produkt_gebiet', '$produkt_bild', '$produkt_halter', '$produkt_telefon', '$produkt_email')";
+    $sql = "INSERT INTO fahrzeuge(ProductID, Fahrzeugname, Einsatzgebiet, Bild, Name_des_Halters, Telefonnummer, Email) VALUES ('', '$produkt_name', '$produkt_gebiet', '$produkt_bild', '$produkt_halter', '$produkt_telefon', '$produkt_email')";
+	echo $sql;
     $pdo->query($sql);
     
 	//Man wird Weitergeleitet zur Confirm Nachricht
-    header("location: add_confirm.php");   
+    //header("location: add_confirm.php");   
 ?>

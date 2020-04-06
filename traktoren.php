@@ -23,7 +23,7 @@
 	
 		//Ausgabe Datenbank traktoren
 	
-        $sql = "SELECT ProductID, Fahrzeugname, Einsatzgebiet, Bild, Name_des_Halters, Telefonnummer, E-Mail FROM fahrzeuge";
+        $sql = "SELECT ProductID, Fahrzeugname, Einsatzgebiet, Bild, Name_des_Halters, Telefonnummer, Email FROM fahrzeuge";
 			foreach ($pdo->query($sql) as $row) {
 					$produkt_id = $row['ProductID'];
 					$produkt_name = $row['Fahrzeugname'];
@@ -31,14 +31,14 @@
 					$produkt_bild = $row['Bild'];
 					$produkt_halter = $row['Name_des_Halters'];
 					$produkt_telefon = $row['Telefonnummer'];
-					$produkt_email = $row['E-Mail'];
+					$produkt_email = $row['Email'];
 					
 
 ?>
             <!-- Anzeige Produkt -->
 			<div id="produkt">
             <div id="produkt_titel"><h1><?php echo $produkt_name; ?></h1></div>
-            <div id="produkt_bild"><img src="bilder/<?php echo $produkt_bild; ?>" /></div>
+            <div id="produkt_bild"><img src="bild/<?php echo $produkt_bild; ?>" width="300px;"/></div>
 			<div id="produkt_gebiet"><?php echo $produkt_gebiet; ?></div>
             <div id="produkt_halter"><?php echo $produkt_halter; ?></div>
 			<div id="produkt_telefon"><?php echo $produkt_telefon; ?></div>
