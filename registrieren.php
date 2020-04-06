@@ -25,7 +25,6 @@
  
 		if(isset($_GET['register'])) {
 			$error = false;
-			$Benutzername = $_POST['Benutzername'];
 			$Passwort = $_POST['Passwort'];
 			$Passwort2 = $_POST['Passwort2'];
 			$Vorname = $_POST['Vorname'];
@@ -67,8 +66,8 @@
 		if(!$error) {    
 			$passwort_hash = password_hash($Passwort, PASSWORD_DEFAULT);
         
-			$statement = $pdo->prepare("INSERT INTO benutzer (Benutzername, Passwort, Vorname, Nachname, Strasse, Hausnummer, PLZ, Email, Telefonnummer) VALUES (:Benutzername, :Passwort, :Vorname, :Nachname, :Strasse, :Hausnummer, :PLZ, :Email, :Telefonnummer)");
-			$result = $statement->execute(array('Benutzername' => $Benutzername, 'Passwort' => $passwort_hash, 'Vorname' => $Vorname, 'Nachname' => $Nachname, 'Strasse' => $Strasse, 'Hausnummer' => $Hausnummer, 'PLZ' => $PLZ, 'Email' => $Email, 'Telefonnummer' => $Telefonnummer ));
+			$statement = $pdo->prepare("INSERT INTO benutzer ( Passwort, Vorname, Nachname, Strasse, Hausnummer, PLZ, Email, Telefonnummer) VALUES (:Passwort, :Vorname, :Nachname, :Strasse, :Hausnummer, :PLZ, :Email, :Telefonnummer)");
+			$result = $statement->execute(array('Passwort' => $passwort_hash, 'Vorname' => $Vorname, 'Nachname' => $Nachname, 'Strasse' => $Strasse, 'Hausnummer' => $Hausnummer, 'PLZ' => $PLZ, 'Email' => $Email, 'Telefonnummer' => $Telefonnummer ));
         
         if($result) {        
             echo 'Du wurdest erfolgreich registriert. <a href="login.php">Zum Login</a>';
@@ -83,8 +82,8 @@
 ?>
 		<!-- Normales Formular -->
 		<form action="?register=1" method="post">
-		Benutzername:<br>
-		<input size="40" maxlength="250" name="Benutzername"><br><br>
+		E-Mail:<br>
+		<input  type="email" size="40" maxlength="250" name="Email"><br><br>
  
 		Dein Passwort:<br>
 		<input type="password" size="40"  maxlength="250" name="Passwort"><br>
@@ -101,14 +100,11 @@
 		Strasse:<br>
 		<input size="40" maxlength="250" name="Strasse"><br><br>
 
-		Huasnummer:<br>
+		Hausnummer:<br>
 		<input size="40" maxlength="250" name="Hausnummer"><br><br>
 
 		PLZ:<br>
 		<input size="40" maxlength="250" name="PLZ"><br><br>
-
-		E-Mail:<br>
-		<input  type="email" size="40" maxlength="250" name="Email"><br><br>
 
 		Telefonnummer:<br>
 		<input size="40" maxlength="250" name="Telefonnummer"><br><br>
