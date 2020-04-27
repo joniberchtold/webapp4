@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 02. Apr 2020 um 14:43
+-- Erstellungszeit: 27. Apr 2020 um 20:31
 -- Server-Version: 10.4.11-MariaDB
--- PHP-Version: 7.4.3
+-- PHP-Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -38,9 +37,16 @@ CREATE TABLE `benutzer` (
   `Strasse` varchar(255) NOT NULL,
   `Hausnummer` int(5) NOT NULL,
   `PLZ` int(8) NOT NULL,
-  `E-Mail` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
   `Telefonnummer` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `benutzer`
+--
+
+INSERT INTO `benutzer` (`UserID`, `Passwort`, `Vorname`, `Nachname`, `Strasse`, `Hausnummer`, `PLZ`, `Email`, `Telefonnummer`) VALUES
+(1, '$2y$10$/7Igposh/0hB7JOx0RNmj.ZqLGCK7IlMgBpRdK32ddfoczxiAbHA6', 'Jonas', 'Berchtold', 'Berg ', 29, 3939, 'jonas.berchtold@hotmail.com', 796282594);
 
 -- --------------------------------------------------------
 
@@ -55,14 +61,14 @@ CREATE TABLE `fahrzeuge` (
   `Bild` varchar(255) NOT NULL,
   `Name_des_Halters` varchar(255) NOT NULL,
   `Telefonnummer` int(30) NOT NULL,
-  `E-Mail` varchar(255) NOT NULL
+  `Email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `fahrzeuge`
 --
 
-INSERT INTO `fahrzeuge` (`ProductID`, `Fahrzeugname`, `Einsatzgebiet`, `Bild`, `Name_des_Halters`, `Telefonnummer`, `E-Mail`) VALUES
+INSERT INTO `fahrzeuge` (`ProductID`, `Fahrzeugname`, `Einsatzgebiet`, `Bild`, `Name_des_Halters`, `Telefonnummer`, `Email`) VALUES
 (1, 'John Deere 5058E', 'Landwirtschaft', 'johndeere5e', 'Jonas Berchtold', 796282594, 'jonas.berchtold@hotmail.com');
 
 -- --------------------------------------------------------
@@ -100,7 +106,7 @@ ALTER TABLE `fahrzeuge`
 -- AUTO_INCREMENT für Tabelle `benutzer`
 --
 ALTER TABLE `benutzer`
-  MODIFY `UserID` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `UserID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `fahrzeuge`
