@@ -15,7 +15,12 @@
 		// datenbank.php ist für die Verbindung zu Datenbank
         include "navigation.php";
 		include "datenbank.php";
-       
+        // Die Klasse Includieren
+		include_once 'merk.php';
+		// Eine Neue Instanz der Klasse cart erstellen
+		$cart = new cart();
+		// Prüfen ob der Warenkorb besteht
+		$cart->initial_cart();
 
 ?>
 <?php
@@ -43,6 +48,7 @@
             <div id="produkt_halter"><?php echo $produkt_halter; ?></div>
 			<div id="produkt_telefon"><?php echo $produkt_telefon; ?></div>
 			<div id="produkt_email"><?php echo $produkt_email; ?></div>
+		<?php $cart; ?>
             <!-- <div id="produkt_bearbeitung"><form method="post" action='edit.php'> <input name="produkt_nr" type="hidden" value="<?php echo $produkt_id; ?>"></input><button type="submit">Bearbeiten</button></form><form method="post" action='del.php'><input name="produkt_nr" type="hidden" value="<?php echo $produkt_id; ?>"></input><button type="submit">Löschen</button></form></div> -->
             </div>
 <?php
