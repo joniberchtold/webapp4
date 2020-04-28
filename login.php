@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 	<title>Login</title>
+	
   </head>
   <body>
 
@@ -61,9 +62,6 @@ Dein Passwort:<br>
 
  <!-- Falls man das Passwort vergessen hat, kann man mit diesem Link zum Passwort vergessen Formular gelabgen -->
 <a href="passwortvergessen.php">Passwort Vergessen</a>
-
-
-
 
 
   </body>
