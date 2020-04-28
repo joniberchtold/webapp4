@@ -5,7 +5,7 @@ class phptextClass
 	public function phptext($text,$textColor,$backgroundColor='',$fontSize,$imgWidth,$imgHeight,$dir,$fileName)
 	{
 		/* settings */
-		$font = './calibri.ttf';/*define font*/
+		$font = dirname(__FILE__) . '\font\monofont.ttf';/*define font*/
 		$textColor=$this->hexToRGB($textColor);	
 		
 		$im = imagecreatetruecolor($imgWidth, $imgHeight);	
@@ -33,7 +33,7 @@ class phptextClass
 	{	
 		/* Settings */
 		$text=$this->random();
-		$font = './font/monofont.ttf';/* font */
+		$font = dirname(__FILE__) . '\font\monofont.ttf';/*define font*/
 		$textColor=$this->hexToRGB($textColor);	
 		$fontSize = $imgHeight * 0.75;
 		

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 27. Apr 2020 um 20:31
+-- Erstellungszeit: 28. Apr 2020 um 13:46
 -- Server-Version: 10.4.11-MariaDB
--- PHP-Version: 7.4.5
+-- PHP-Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -46,7 +47,8 @@ CREATE TABLE `benutzer` (
 --
 
 INSERT INTO `benutzer` (`UserID`, `Passwort`, `Vorname`, `Nachname`, `Strasse`, `Hausnummer`, `PLZ`, `Email`, `Telefonnummer`) VALUES
-(1, '$2y$10$/7Igposh/0hB7JOx0RNmj.ZqLGCK7IlMgBpRdK32ddfoczxiAbHA6', 'Jonas', 'Berchtold', 'Berg ', 29, 3939, 'jonas.berchtold@hotmail.com', 796282594);
+(1, '$2y$10$/7Igposh/0hB7JOx0RNmj.ZqLGCK7IlMgBpRdK32ddfoczxiAbHA6', 'Jonas', 'Berchtold', 'Berg ', 29, 3939, 'jonas.berchtold@hotmail.com', 796282594),
+(2, '$2y$10$MUBdW5ta046JR0q.Ke9Keefmvuy2KOsSyKL.e6Pm4RpBMreywhXUO', 'Hans', 'Meier', 'Kantonsstrasse', 32, 3930, 'hans.meier@bringhen.ch', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -69,7 +71,7 @@ CREATE TABLE `fahrzeuge` (
 --
 
 INSERT INTO `fahrzeuge` (`ProductID`, `Fahrzeugname`, `Einsatzgebiet`, `Bild`, `Name_des_Halters`, `Telefonnummer`, `Email`) VALUES
-(1, 'John Deere 5058E', 'Landwirtschaft', 'johndeere5e', 'Jonas Berchtold', 796282594, 'jonas.berchtold@hotmail.com');
+(5, 'John Deere', 'Landwirtschaft (Karottenanbau)', 'johndeere5e.png', 'Hans Meier', 2147483647, 'hans.meier@bringhen.ch');
 
 -- --------------------------------------------------------
 
@@ -81,6 +83,13 @@ CREATE TABLE `liste` (
   `UserID` int(100) NOT NULL,
   `ProductID` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `liste`
+--
+
+INSERT INTO `liste` (`UserID`, `ProductID`) VALUES
+(2, 3);
 
 --
 -- Indizes der exportierten Tabellen
@@ -106,13 +115,13 @@ ALTER TABLE `fahrzeuge`
 -- AUTO_INCREMENT für Tabelle `benutzer`
 --
 ALTER TABLE `benutzer`
-  MODIFY `UserID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `UserID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT für Tabelle `fahrzeuge`
 --
 ALTER TABLE `fahrzeuge`
-  MODIFY `ProductID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ProductID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -15,7 +15,7 @@
 		<?php if(!isset($_SESSION['userid'])) {?>
 		 
         <li class="nav-item">
-            <a class="nav-link" href="demo.php">Login</a>
+            <a class="nav-link" href="login.php">Login</a>
         </li>
 			
         <li class="nav-item">
@@ -27,12 +27,16 @@
 		<li class="nav-item">
 			<a class="nav-link" href="traktoren.php">Traktoren</a>
         </li>	  
-	  
-	    <li class="nav-item">
+		
+		<?php if(isset($_SESSION['userid'])) {?>
+		
+		<li class="nav-item">
+			<a class="nav-link" href="merkliste.php">Merkliste</a>
+        </li>
+		
+		<li class="nav-item">
 			<a class="nav-link" href="add.php">Hinzufügen</a>
         </li>	
-		
-        <?php if(isset($_SESSION['userid'])) {?>
 		
         <li class="nav-item">
 			<a class="nav-link" href="logout.php">Logout</a>

@@ -24,5 +24,5 @@
     $pdo->query($sql);
     
 	//Man wird Weitergeleitet zur Confirm Nachricht
-    //header("location: add_confirm.php");   
+    header("location: add_confirm.php");   
 ?>
